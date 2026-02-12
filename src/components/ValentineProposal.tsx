@@ -1,8 +1,10 @@
 import { useState, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import heroImg from "@/assets/couple-kiss.jpg";
+import handsImg from "@/assets/couple-hands.jpg";
+import selfieImg from "@/assets/couple-selfie.jpg";
+import mirrorImg from "@/assets/couple-mirror.jpg";
 import rosesImg from "@/assets/valentine-roses.jpg";
-import handsImg from "@/assets/valentine-hands.jpg";
-import balloonImg from "@/assets/valentine-balloon.jpg";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -34,8 +36,8 @@ const ValentineProposal = () => {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
-          _subject: "💕 April Said YES! She'll be your Valentine! 💕",
-          message: "April Mashaba said YES to being your Valentine! 🎉❤️",
+          _subject: "❤️ April Said YES! She'll be your Valentine! ❤️",
+          message: "April Mashaba said YES to being your Valentine! ❤️",
           _template: "box",
         }),
       });
@@ -51,7 +53,7 @@ const ValentineProposal = () => {
       {/* ===== HERO SECTION ===== */}
       <section className="relative min-h-screen flex flex-col justify-end px-6 pb-16">
         <div className="absolute inset-0 z-0">
-          <img src={rosesImg} alt="Valentine roses" className="w-full h-full object-cover" />
+          <img src={heroImg} alt="Us" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent" />
         </div>
 
@@ -68,7 +70,7 @@ const ValentineProposal = () => {
             To April<br />Mashaba…
           </motion.h1>
           <motion.p variants={fadeUp} custom={2} className="text-foreground/60 text-lg">
-            Scroll down, my love 👇🏾
+            Scroll down, my love ❤️
           </motion.p>
         </motion.div>
       </section>
@@ -77,17 +79,17 @@ const ValentineProposal = () => {
       <section className="px-6 py-20 max-w-lg">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }}>
           <motion.p variants={fadeUp} custom={0} className="text-secondary text-sm tracking-[0.3em] uppercase mb-6">
-            Hey Baby 💛
+            Hey Baby
           </motion.p>
           <motion.p variants={fadeUp} custom={1} className="text-xl sm:text-2xl text-foreground/90 leading-relaxed">
             I had to make this as special as possible seeing that this will be our{" "}
             <span className="text-primary font-bold">first Valentine's</span> that we are going to spend together in person.
           </motion.p>
           <motion.p variants={fadeUp} custom={2} className="text-xl sm:text-2xl text-foreground/90 leading-relaxed mt-6">
-            But before that, I wanna do right by you 🥺
+            But before that, I wanna do right by you
           </motion.p>
           <motion.p variants={fadeUp} custom={3} className="text-2xl sm:text-3xl font-bold text-secondary mt-8">
-            Ready? Let's go 🚀
+            Ready? Let's go
           </motion.p>
         </motion.div>
       </section>
@@ -101,15 +103,15 @@ const ValentineProposal = () => {
           className="max-w-sm text-right"
         >
           <motion.p variants={fadeUp} custom={0} className="text-xl sm:text-2xl text-foreground/90 italic leading-relaxed">
-            My love, you bring out my utmost joy 😍
+            My love, you bring out my utmost joy
           </motion.p>
           <motion.p variants={fadeUp} custom={1} className="text-xl sm:text-2xl text-foreground/90 italic leading-relaxed mt-4">
-            You reminded me how to be happy,<br />I feel like a little boy 🧒🏾
+            You reminded me how to be happy,<br />I feel like a little boy
           </motion.p>
         </motion.div>
       </section>
 
-      {/* ===== IMAGE BREAK — hands ===== */}
+      {/* ===== IMAGE — hands holding ===== */}
       <motion.section
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
@@ -118,7 +120,7 @@ const ValentineProposal = () => {
         className="px-6 py-4"
       >
         <div className="rounded-2xl overflow-hidden shadow-2xl shadow-primary/20 max-w-lg ml-auto">
-          <img src={handsImg} alt="Hands holding" className="w-full h-56 sm:h-72 object-cover" />
+          <img src={handsImg} alt="Our hands" className="w-full h-64 sm:h-80 object-cover" />
         </div>
       </motion.section>
 
@@ -131,10 +133,10 @@ const ValentineProposal = () => {
           className="max-w-md"
         >
           <motion.p variants={fadeUp} custom={0} className="text-xl sm:text-2xl text-foreground/90 italic leading-relaxed">
-            It has been a long time coming, you are worth the wait ⏳
+            It has been a long time coming, you are worth the wait
           </motion.p>
           <motion.p variants={fadeUp} custom={1} className="text-xl sm:text-2xl text-foreground/90 italic leading-relaxed mt-4">
-            I don't know how we'll get there, but I know you are my fate 💫
+            I don't know how we'll get there, but I know you are my fate
           </motion.p>
         </motion.div>
       </section>
@@ -148,13 +150,26 @@ const ValentineProposal = () => {
           className="max-w-sm text-right"
         >
           <motion.p variants={fadeUp} custom={0} className="text-xl sm:text-2xl text-foreground/90 italic leading-relaxed">
-            A perfect day to reconnect, I'm gonna have a permanent smile 😁
+            A perfect day to reconnect, I'm gonna have a permanent smile
           </motion.p>
           <motion.p variants={fadeUp} custom={1} className="text-xl sm:text-2xl text-foreground/90 italic leading-relaxed mt-4">
-            My shyness will instantly disappear, as if I hadn't seen you in awhile 🫣
+            My shyness will instantly disappear, as if I hadn't seen you in awhile
           </motion.p>
         </motion.div>
       </section>
+
+      {/* ===== IMAGE — selfie ===== */}
+      <motion.section
+        initial={{ opacity: 0, y: 60 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="px-6 py-4"
+      >
+        <div className="rounded-2xl overflow-hidden shadow-2xl shadow-primary/20 max-w-sm">
+          <img src={selfieImg} alt="Us together" className="w-full h-72 sm:h-96 object-cover" />
+        </div>
+      </motion.section>
 
       {/* ===== POEM PART 4 — left aligned ===== */}
       <section className="px-6 py-16">
@@ -165,24 +180,24 @@ const ValentineProposal = () => {
           className="max-w-md"
         >
           <motion.p variants={fadeUp} custom={0} className="text-xl sm:text-2xl text-foreground/90 italic leading-relaxed">
-            I can't wait to see you, I can't wait to hold you tight 🤗
+            I can't wait to see you, I can't wait to hold you tight
           </motion.p>
           <motion.p variants={fadeUp} custom={1} className="text-xl sm:text-2xl text-foreground/90 italic leading-relaxed mt-4">
-            I'm never letting you go, holding you with all my might 💪🏾
+            I'm never letting you go, holding you with all my might
           </motion.p>
         </motion.div>
       </section>
 
-      {/* ===== IMAGE BREAK — balloon ===== */}
+      {/* ===== IMAGE — mirror ===== */}
       <motion.section
-        initial={{ opacity: 0, y: 60 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="px-6 py-4 flex justify-center"
+        className="px-6 py-4 flex justify-end"
       >
-        <div className="w-48 h-48 sm:w-56 sm:h-56 rounded-full overflow-hidden border-4 border-primary/30 shadow-2xl shadow-primary/30">
-          <img src={balloonImg} alt="Heart balloon" className="w-full h-full object-cover" />
+        <div className="rounded-2xl overflow-hidden shadow-2xl shadow-primary/20 max-w-sm">
+          <img src={mirrorImg} alt="Mirror selfie" className="w-full h-72 sm:h-96 object-cover" />
         </div>
       </motion.section>
 
@@ -195,13 +210,26 @@ const ValentineProposal = () => {
           className="max-w-sm text-right"
         >
           <motion.p variants={fadeUp} custom={0} className="text-xl sm:text-2xl text-foreground/90 italic leading-relaxed">
-            I miss your beautiful smile and that contagious laugh 😂
+            I miss your beautiful smile and that contagious laugh
           </motion.p>
           <motion.p variants={fadeUp} custom={1} className="text-xl sm:text-2xl text-foreground/90 italic leading-relaxed mt-4">
             I can't wait for you to feel my heartbeat, so you can hear how loud is my love ❤️
           </motion.p>
         </motion.div>
       </section>
+
+      {/* ===== IMAGE — roses ===== */}
+      <motion.section
+        initial={{ opacity: 0, y: 60 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="px-6 py-4 flex justify-center"
+      >
+        <div className="w-48 h-48 sm:w-56 sm:h-56 rounded-full overflow-hidden border-4 border-primary/30 shadow-2xl shadow-primary/30">
+          <img src={rosesImg} alt="Valentine roses" className="w-full h-full object-cover" />
+        </div>
+      </motion.section>
 
       {/* ===== POEM PART 6 — left aligned ===== */}
       <section className="px-6 py-16">
@@ -212,10 +240,10 @@ const ValentineProposal = () => {
           className="max-w-md"
         >
           <motion.p variants={fadeUp} custom={0} className="text-xl sm:text-2xl text-foreground/90 italic leading-relaxed">
-            My forever Valentine, but I wanna make it more official 💍
+            My forever Valentine, but I wanna make it more official
           </motion.p>
           <motion.p variants={fadeUp} custom={1} className="text-xl sm:text-2xl text-foreground/90 italic leading-relaxed mt-4">
-            Gonna make sure to step up yearly, even when my surname follows your initial 👀
+            Gonna make sure to step up yearly, even when my surname follows your initial
           </motion.p>
         </motion.div>
       </section>
@@ -224,7 +252,7 @@ const ValentineProposal = () => {
       <section className="px-6 py-20 text-center">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }}>
           <motion.p variants={fadeUp} custom={0} className="text-xl sm:text-2xl text-foreground/80 leading-relaxed max-w-md mx-auto">
-            So my baby, I hope that we can make up for lost time 🕰️
+            So my baby, I hope that we can make up for lost time
           </motion.p>
           <motion.p variants={fadeUp} custom={1} className="text-xl sm:text-2xl text-foreground/80 leading-relaxed mt-6 max-w-md mx-auto">
             But I've got one thing to ask you:
@@ -235,7 +263,7 @@ const ValentineProposal = () => {
             custom={3}
             className="text-4xl sm:text-5xl font-black text-primary leading-tight"
           >
-            Will you be my Valentine? 💕
+            Will you be my Valentine? ❤️
           </motion.h2>
         </motion.div>
       </section>
@@ -258,7 +286,7 @@ const ValentineProposal = () => {
                 onClick={handleYes}
                 className="px-10 py-4 bg-primary text-primary-foreground text-xl font-bold rounded-full shadow-lg hover:shadow-primary/50 hover:shadow-2xl transition-shadow"
               >
-                Yes! 💖
+                Yes! ❤️
               </motion.button>
 
               <motion.button
@@ -269,7 +297,7 @@ const ValentineProposal = () => {
                 onClick={moveNoButton}
                 className="px-8 py-4 bg-muted text-muted-foreground text-lg rounded-full border border-border"
               >
-                No 😢
+                No
               </motion.button>
             </motion.div>
           ) : (
@@ -285,16 +313,16 @@ const ValentineProposal = () => {
                 transition={{ duration: 0.6, repeat: 3 }}
                 className="text-7xl mb-4"
               >
-                🥰
+                ❤️
               </motion.div>
               <h2 className="text-3xl sm:text-4xl font-bold text-secondary mb-2">
-                Yaaay! 🎉
+                Yaaay!
               </h2>
               <p className="text-xl text-foreground/80 italic">
                 I knew you'd say yes, my love! ❤️
               </p>
               <p className="text-muted-foreground text-sm mt-4">
-                {sending ? "Sending the good news… 💌" : sent ? "💌 Katlego has been notified!" : ""}
+                {sending ? "Sending the good news…" : sent ? "❤️ Katlego has been notified!" : ""}
               </p>
               {[...Array(12)].map((_, i) => (
                 <motion.span
